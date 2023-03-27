@@ -1,0 +1,13 @@
+.contactForm{
+    display: flex;
+    /* gap: 20px; */
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.field{
+    margin-left: 10px;
+    margin-top: 10px;
+}
