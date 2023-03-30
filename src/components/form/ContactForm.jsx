@@ -1,10 +1,10 @@
 import React, { Component,  useState } from 'react';
+import { nanoid } from 'nanoid';
 import css from '../form/ContactForm.module.css';
 
 export const ContactForm = ({onSubmit}) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const [id, setId] = useState('');
 
   const handleInputChange = e => {
     switch (e.target.name) {
@@ -24,12 +24,11 @@ export const ContactForm = ({onSubmit}) => {
   const reset = () => {
     setName('');
     setNumber('');
-    setId('');
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({name, number, id});
+    onSubmit({ name, number, id: nanoid() });
     reset();
   };
 
